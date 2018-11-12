@@ -92,8 +92,8 @@ public class Complex {
      * @return A complex <code>c</code> such that <code>this + c = 0</code>
      */
     Complex negate() {
-        return new Complex(-this.real, this.imaginary);
-    }
+        return new Complex(-this.real, -this.imaginary);
+    } //corrigé
 
     /**
      * The conjugate of a complex number
