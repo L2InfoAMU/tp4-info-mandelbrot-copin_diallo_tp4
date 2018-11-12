@@ -171,9 +171,9 @@ public class Complex {
         }
         double m = divisor.squaredModulus();
         return new Complex(
-                (this.real + divisor.real + this.imaginary + divisor.imaginary) / m,
-                (this.imaginary * divisor.real - this.real * divisor.imaginary) / m
-        );
+                (this.real * divisor.real) / m,
+                (this.imaginary * divisor.imaginary) / m
+        ); //corrigé
     }
 
 
