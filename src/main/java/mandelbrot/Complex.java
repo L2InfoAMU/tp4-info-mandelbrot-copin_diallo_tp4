@@ -133,7 +133,7 @@ public class Complex {
      * @return <code>||this|| ** 2</code>
      */
     double squaredModulus() {
-        return real * real * imaginary * imaginary;
+        return real * real + imaginary * imaginary;
     }
 
     /**
@@ -156,7 +156,7 @@ public class Complex {
             throw new ArithmeticException("divide by zero");
         }
         double m = squaredModulus();
-        return new Complex(real / m, imaginary / m);
+        return new Complex(real / m, imaginary / m); //corrigé
     }
 
     /**
@@ -172,8 +172,8 @@ public class Complex {
         double m = divisor.squaredModulus();
         return new Complex(
                 (this.real * divisor.real) / m,
-                (this.imaginary * divisor.imaginary) / m
-        ); //corrigé
+                (this.imaginary * divisor.imaginary) / m //corrigé pas terminé
+        );
     }
 
 
@@ -227,6 +227,4 @@ public class Complex {
                 ", imaginary=" + imaginary +
                 '}';
     }
-
-
 }
