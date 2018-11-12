@@ -133,4 +133,14 @@ public class ComplexTest {
         Complex c2 = new Complex(real, imaginary);
         assertEquals(c1.hashCode(), c2.hashCode());
     }
+
+    @Test
+    void testEquals() {
+        String chaine1=new String("test");
+        String chaine2=new String("test");
+        boolean isSame = (chaine1 == chaine2);
+        System.out.println(isSame);
+        boolean isEqual = (chaine1.equals(chaine2));
+        System.out.println(isEqual);
+    }  //ajouté
 }
