@@ -52,8 +52,8 @@ public class Complex {
     }
 
     double getImaginary() {
-        return imaginary;
-    }
+        return this.imaginary;
+    } //corrigé
 
     /**
      * Creates complex numbers corresponding to rotations
