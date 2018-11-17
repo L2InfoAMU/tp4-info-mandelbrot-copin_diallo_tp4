@@ -83,7 +83,7 @@ public class Complex {
      */
     public Complex add(Complex addend) {
         return new Complex(this.real + addend.real,
-                this.imaginary + addend.imaginary)  //corrigé
+                this.imaginary + addend.imaginary);  //corrigé
     }
 
     /**
@@ -152,11 +152,11 @@ public class Complex {
      * @return a complex number <code>c</code> such that <code>this * c = 1</code>
      */
     Complex reciprocal() {
-        if (this.equals(ONE)){
+        if (this.equals(ZERO)){
             throw new ArithmeticException("divide by zero");
         }
         double m = squaredModulus();
-        return new Complex(real / m, imaginary / m); //corrigé
+        return new Complex(real / m, -imaginary / m); //corrigé
     }
 
     /**
@@ -171,8 +171,8 @@ public class Complex {
         }
         double m = divisor.squaredModulus();
         return new Complex(
-                (this.real * divisor.imaginary) / m,
-                (this.imaginary * divisor.real) / m //corrigé pas terminé
+                (this.real * divisor.imaginary + this.imaginary * divisor.real) / m,
+                (this.imaginary * divisor.real - this.real * divisor.imaginary) / m
         );
     }
 
@@ -223,8 +223,8 @@ public class Complex {
     @Override
     public String toString() {
         return "Complex{" +
-                "real=" + imaginary +
-                ", imaginary=" + imaginary +
+                "real=" + real +
+                ", imaginary=" + imaginary +   //corrigé
                 '}';
     }
 }
