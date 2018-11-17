@@ -98,6 +98,8 @@ public class ComplexTest {
     }
 
     @Test
+
+    @Test
     void testDivideByZero(){
         assertThrows(ArithmeticException.class, ()->Complex.ONE.divide(Complex.ZERO));
     }
@@ -143,4 +145,6 @@ public class ComplexTest {
         boolean isEqual = (chaine1.equals(chaine2));
         System.out.println(isEqual);
     }  //ajouté
+
+
 }
