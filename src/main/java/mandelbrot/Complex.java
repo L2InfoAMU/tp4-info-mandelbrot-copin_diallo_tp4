@@ -224,7 +224,7 @@ public class Complex {
     public String toString() {
         return "Complex{" +
                 "real=" + real +
-                ", imaginary=" + imaginary +   //corrigé
+                ", imaginary=" + imaginary +    //corrigé
                 '}';
     }
 }
