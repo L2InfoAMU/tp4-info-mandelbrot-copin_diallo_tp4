@@ -124,6 +124,18 @@ public class ComplexTest {
         ;} //ajouté
 
     @Test
+    void testModulus() {
+        double realTest=2, imaginaryTest=0;
+        assertEquals(2, Math.sqrt(realTest*realTest+imaginaryTest*imaginaryTest));
+    }
+
+    @Test
+    void testPow() {
+        assertEquals(Complex.ZERO, new Complex(2,2).pow(4));
+        assertEquals(twoI, onePlusI.multiply(onePlusI));
+    } //ajouté 
+
+    @Test
     void testConjugate(){
         assertEquals(Complex.ZERO, Complex.ZERO.conjugate());
         assertEquals(Complex.ONE, Complex.ONE.conjugate());
