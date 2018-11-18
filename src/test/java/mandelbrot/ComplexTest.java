@@ -118,6 +118,12 @@ public class ComplexTest {
 
 
     @Test
+    void testSquaredModulus() {
+                double realTest=1, imaginaryTest=1;
+                assertEquals(2, realTest*realTest+imaginaryTest*imaginaryTest);
+        ;} //ajouté
+
+    @Test
     void testConjugate(){
         assertEquals(Complex.ZERO, Complex.ZERO.conjugate());
         assertEquals(Complex.ONE, Complex.ONE.conjugate());
