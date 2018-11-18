@@ -91,13 +91,27 @@ public class ComplexTest {
     }
 
     @Test
+    void testAdd(){
+        assertEquals(new Complex (1, 0), Complex.ZERO.add(Complex.ONE));
+        assertEquals(new Complex(1,1), Complex.ONE.add(Complex.I));
+        assertEquals(new Complex(real+1,imaginary+1), new Complex(real,imaginary).add(onePlusI));
+    }  //ajouté
+
+    @Test
     void testDivide(){
         assertEquals(onePlusI, onePlusI.divide(Complex.ONE));
         assertEquals(new Complex(0.5, 0), Complex.ONE.divide(two));
         assertEquals(minusI,oneMinusI.divide(onePlusI));
     }
 
+
+
     @Test
+    void testMultiply(){
+        assertEquals(onePlusI, onePlusI.multiply(Complex.ONE));
+        assertEquals(new Complex(1, 1), Complex.ONE.multiply(onePlusI));
+        assertEquals(minusI,oneMinusI.multiply(onePlusI));
+    }
 
     @Test
     void testDivideByZero(){

@@ -111,7 +111,7 @@ public class Complex {
      * @return the complex number <code>this - subtrahend</code>
      */
     Complex subtract(Complex subtrahend) {
-        return new Complex(this.real - subtrahend.real, this.imaginary - subtrahend.imaginary); //corrigé
+        return new Complex(this.real - subtrahend.real, this.imaginary - subtrahend.imaginary);
     }
 
     /**
@@ -122,8 +122,8 @@ public class Complex {
      */
     Complex multiply(Complex factor) {
         return new Complex(
-                this.real * factor.real - this.imaginary * factor.imaginary,
-                this.real * factor.imaginary + this.imaginary * factor.real  //corrigé
+                this.real * factor.real + this.imaginary * factor.imaginary,
+                this.imaginary * factor.imaginary + this.real * factor.real  //corrigé
         );
     }
 
