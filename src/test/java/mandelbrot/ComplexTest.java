@@ -28,6 +28,13 @@ public class ComplexTest {
     }
 
     @Test
+    void testReal(){
+        assertEquals(Complex.ZERO, new Complex(0, 5).real(0));
+        assertNotEquals(twoI, new Complex(0,5).real(1));
+        assertEquals(twoI, new Complex(2,5).real(2)); //ajouté 
+    }
+
+    @Test
     void testGetReal(){
         assertEquals(2., two.getReal(), Helpers.EPSILON);
         assertEquals(1., oneMinusI.getReal(), Helpers.EPSILON);
@@ -126,14 +133,20 @@ public class ComplexTest {
     @Test
     void testModulus() {
         double realTest=2, imaginaryTest=0;
-        assertEquals(2, Math.sqrt(realTest*realTest+imaginaryTest*imaginaryTest));
+        assertEquals(2, Math.sqrt(realTest*realTest + imaginaryTest*imaginaryTest)); //ajouté
     }
 
     @Test
     void testPow() {
         assertEquals(Complex.ZERO, new Complex(2,2).pow(4));
         assertEquals(twoI, onePlusI.multiply(onePlusI));
-    } //ajouté 
+    } //ajouté
+
+    @Test
+    void testScale() {
+        assertEquals(onePlusI, onePlusI.scale(1));
+        assertEquals(new Complex(4,4), new Complex(2,2).scale(2));
+    }
 
     @Test
     void testConjugate(){
