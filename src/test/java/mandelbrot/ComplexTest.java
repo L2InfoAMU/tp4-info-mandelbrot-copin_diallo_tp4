@@ -105,18 +105,17 @@ public class ComplexTest {
     }
 
 
-
     @Test
     void testMultiply(){
         assertEquals(onePlusI, onePlusI.multiply(Complex.ONE));
-        assertEquals(new Complex(1, 1), Complex.ONE.multiply(onePlusI));
-        assertEquals(minusI,oneMinusI.multiply(onePlusI));
+        assertEquals(onePlusI,new Complex(0, 1).multiply(oneMinusI)); // ajouté
     }
 
     @Test
     void testDivideByZero(){
         assertThrows(ArithmeticException.class, ()->Complex.ONE.divide(Complex.ZERO));
     }
+
 
     @Test
     void testConjugate(){

@@ -122,8 +122,8 @@ public class Complex {
      */
     Complex multiply(Complex factor) {
         return new Complex(
-                this.real * factor.real + this.imaginary * factor.imaginary,
-                this.imaginary * factor.imaginary + this.real * factor.real  //corrigé
+                this.real * factor.real - this.imaginary * factor.imaginary,
+                this.imaginary * factor.real + this.real * factor.imaginary  //corrigé
         );
     }
 
@@ -172,7 +172,7 @@ public class Complex {
         double m = divisor.squaredModulus();
         return new Complex(
                 (this.real * divisor.real + this.imaginary * divisor.imaginary) / m,
-                (this.imaginary * divisor.real + this.imaginary * divisor.imaginary) / m  //corrigé
+                (this.imaginary * divisor.real - this.real * divisor.imaginary) / m  //corrigé
         );
     }
 
